@@ -17,7 +17,7 @@ import regionaltax.TaxInterface;
 public final class Customer {
 
 	private String name;
-	private static AtomicLong id = new AtomicLong();
+	private static AtomicLong id = new AtomicLong(); // Thread-safe counter to create customer-id's
 	private List<Product> products;
 	private Region region;
 	private PaymentInterface paymentInterface;
@@ -64,6 +64,8 @@ public final class Customer {
 		return paymentInterface;
 
 	}
+
+	// Determine whether the total price includes taxes
 
 	public void showTotalPrice(boolean hasTaxes) {
 
@@ -113,7 +115,7 @@ public final class Customer {
 	}
 
 	public String showCustomerInfo() {
-		
+
 		return "Name: " + getName() + "  - Region: " + getRegion() + " - ID: " + getId();
 	}
 
@@ -129,6 +131,8 @@ public final class Customer {
 		System.out.println("\n----------------------------------\n");
 
 	}
+
+	// Adds or removes a product from a shopping list + the amount to add or remove
 
 	public void addProduct(Product product, int amount) {
 
