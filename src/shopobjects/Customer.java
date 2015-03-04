@@ -22,7 +22,7 @@ public final class Customer {
 	private Region region;
 	private PaymentInterface paymentInterface;
 	private TaxInterface taxInterface;
-	boolean withTaxes;
+	private boolean withTaxes;
 
 	public Customer(String name, Region region) {
 
