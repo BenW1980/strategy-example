@@ -84,7 +84,7 @@ public final class Customer {
 			}
 		}
 
-		System.out.println(total);
+		System.out.println("\nTotal: " + total);
 
 	}
 
